@@ -10,7 +10,7 @@ import {
 } from "react-leaflet";
 import './../App';
 // Map components
-import MapboxSearchBar from './MapboxSearchBar';
+import SearchBar from './SearchBar';
 import ChartPanel from './ChartPanel';
 import ParcelInfo from './ParcelInfo';
 import NeighborhoodModal from './NeighborhoodModal';
@@ -290,15 +290,11 @@ class MyMap extends Component {
             selectedWaValue,
             selectedSeValue,
             selectedCoValue,
-            selectedWuValue,
+            selectedWuValue
         } = this.props;
 
         let filteredFeatures = geoData.features.filter(feature => {
         const props = feature.properties || {};
-
-        // /* This is defined, but never used. Remove? */
-        // const { geoData } = this.props;
-        // /* */
 
         const matchVacant =
             selectedVType === 'All' || props.VACANT === selectedVType;
@@ -533,7 +529,7 @@ class MyMap extends Component {
                             selectedPaBikeTime.join(',') +
                             selectedPaDriveTime.join(',') +
                             selectedZType + selectedSnyZType +
-                            selectedWaValue + selectedSeValue + selectedCoValue + selectedWuValue}
+                            selectedWaValue + selectedSeValue + selectedCoValue + selectedWuValue }
                         style={this.getParcelStyle}
                         data={filteredFeatures} 
                         onEachFeature={this.onEachParcel}
@@ -685,7 +681,7 @@ class MyMap extends Component {
                     </LayersControl.Overlay>
                 </LayersControl>
                 
-                <MapboxSearchBar/>
+                <SearchBar/>
                 <ChartPanel
                         parcel={this.props.selectedParcel}
                         onClose={() => this.props.onParcelClick(null)}

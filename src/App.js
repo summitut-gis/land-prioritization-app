@@ -59,7 +59,7 @@ function App() {
 
   // Fetch parcels layer from Google Cloud Storage
   useEffect(() => {
-    fetch("https://storage.googleapis.com/land-prioritization-app-data/Parcels.json")
+    fetch("https://github.com/summitut-gis/land-prioritization-app/releases/download/parcels/Parcels.json")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
@@ -157,10 +157,6 @@ const vacantTypes = Array.from(
       .filter(Boolean)
   )
 )
-
-// const zoningTypes = Array.from(
-//   new Set(geoData.features.map(f => f.properties?.ZONING).filter(Boolean))
-// );
 
 // Const for clearing map filters
   const handleClearFilters = () => {
