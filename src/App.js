@@ -59,7 +59,7 @@ function App() {
 
   // Fetch parcels layer from Google Cloud Storage
   useEffect(() => {
-    fetch("https://github.com/summitut-gis/land-prioritization-app/releases/download/parcels/Parcels.json?raw=1")
+    fetch(process.env.PUBLIC_URL + "/data/Parcels.json")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);

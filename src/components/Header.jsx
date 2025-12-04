@@ -36,7 +36,7 @@ const Header = ({
             Summit County Main Site
           </a>
           <span className="separator">|</span>
-          <a href="mailto:tolson@summitcountyutah.gov?subject=Error%20Encountered%20in%20Land%20Prioritization%20App">
+          <a href="mailto:jward@summitcountyutah.gov?subject=Error%20Encountered%20in%20Land%20Prioritization%20App">
             Experiencing a Problem? Click Here
           </a>
         </div>
